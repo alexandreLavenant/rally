@@ -1,0 +1,94 @@
+:root {
+  --color-primary: #397cd3;
+  --box-shadow: rgb(45 46 131 / .16) 0 0 4px;
+  --border-color: #e2e4f0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+#map {
+  height: 400px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.center {
+  align-items: center;
+}
+
+.ml-sm {
+  margin-left: 8px;
+}
+
+.mt-sm {
+  margin-top: 8px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* components */
+
+.profile {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 24px;
+}
+
+.profile-img {
+  width: 80px;
+}
+
+.picture {
+  border-radius: 50%;
+  background-color: white;
+  padding: 4px;
+}
+
+.card-img {
+  width: 20px;
+}
+
+.cards {
+  padding: 32px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--color-primary);
+
+  padding: 16px;
+  margin-bottom: 8px;
+}
+
+.card:hover {
+  box-shadow: var(--box-shadow);
+}
+
+.card.selected {
+  color: white;
+  background-color: var(--color-primary);
+}
