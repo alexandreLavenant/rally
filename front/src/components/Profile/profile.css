@@ -1,0 +1,15 @@
+.profile {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 24px;
+}
+
+.profile-img {
+  width: 80px;
+}
+
+.picture {
+  border-radius: 50%;
+  background-color: white;
+  padding: 4px;
+}

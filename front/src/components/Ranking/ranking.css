@@ -1,0 +1,25 @@
+.cards {
+  padding: 32px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--color-primary);
+
+  padding: 16px;
+  margin-bottom: 8px;
+}
+
+.card:hover {
+  box-shadow: var(--box-shadow);
+}
+
+.card.selected {
+  color: white;
+  background-color: var(--color-primary);
+}
