@@ -1,6 +1,16 @@
 const express = require('express');
 const http = require('http');
+const mongoose = require('mongoose');
+require('dotenv').config();
 const { Server } = require("socket.io");
+
+mongoose.connect(process.env.DATABASE_URL,
+{ 
+    useNewUrlParser: true,
+    useUnifiedTopology: true 
+})
+.then(() => console.log('Connexion à MongoDB réussie !'))
+.catch(() => console.log('Connexion à MongoDB échouée !'));
 
 const app = express();
 const server = http.createServer(app);
