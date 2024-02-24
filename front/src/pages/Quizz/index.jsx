@@ -1,3 +1,5 @@
+import './quizz.scss';
+
 const Quizz = () => {
   return (
     <div>quizz</div>
