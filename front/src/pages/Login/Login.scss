@@ -1,23 +1,12 @@
 .background {
-    //background-color: rgb(69, 175, 228);
     background-image: url("../../images/login-background.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0;
-}
-
-.login-title {
-    padding-bottom: 60px;
-    color: rgb(40, 77, 77);
-    font-family: "Anta", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 40px;
+    height: 100vh;
 }
 
 .login-content {
@@ -25,8 +14,16 @@
     display: flex;
     flex-direction: column;
     padding: 120px;
-    height: fit-content;
     border-radius: 8px;
+}
+
+.login-title {
+    margin-bottom: 60px;
+    color: rgb(40, 77, 77);
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
 }
 
 input {
@@ -39,8 +36,6 @@ input {
     border-right: none;
     outline: none;
     font-family: "Anta", sans-serif;
-    font-weight: 400;
-    font-style: normal;
 
     &:focus {
         border-color: rgb(63, 155, 201);
@@ -56,11 +51,9 @@ button {
     color: white;
     cursor: pointer;
     font-family: "Anta", sans-serif;
-    font-weight: 400;
-    font-style: normal;
 
     &:hover {
-    background-color: rgb(53, 139, 182);
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        background-color: rgb(53, 139, 182);
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     }
 }
