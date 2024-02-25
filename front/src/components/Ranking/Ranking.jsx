@@ -1,4 +1,4 @@
-import './ranking.css';
+import './ranking.scss';
 
 const Ranking = ({ teams }) => {
   return (

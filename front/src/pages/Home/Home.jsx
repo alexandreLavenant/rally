@@ -1,7 +1,7 @@
 
-import Geo from '../../components/Geo';
-import Profile from '../../components/Profile';
-import Ranking from '../../components/Ranking';
+import Geo from '../../components/Geo/Geo';
+import Profile from '../../components/Profile/Profile';
+import Ranking from '../../components/Ranking/Ranking';
 
 const teams = [
   {

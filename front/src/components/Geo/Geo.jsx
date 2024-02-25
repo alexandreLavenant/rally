@@ -1,6 +1,6 @@
 import { MapContainer, TileLayer } from 'react-leaflet';
 
-import './geo.css';
+import './geo.scss';
 
 const Geo = () => {
   return (

@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
-import Home from './pages/Home';
-import Quizz from './pages/Quizz';
+import Home from './pages/Home/Home';
+import Quizz from './pages/Quizz/Quizz';
 import Login from './pages/Login/Login';
 
 export default function App() {
