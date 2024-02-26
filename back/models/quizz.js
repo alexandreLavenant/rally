@@ -5,7 +5,7 @@ module.exports = mongoose.model('Quizz', {
   questions: [
     {
       label: { type: String, required: true },
-      anwser: { type: String, required: true }
+      answer: { type: String, required: true }
     }
   ]
 });

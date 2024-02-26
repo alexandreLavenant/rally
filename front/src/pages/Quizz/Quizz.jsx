@@ -1,14 +1,29 @@
 import { useState } from 'react';
 import './quizz.scss';
 
+const defaultQuizz = {
+  name: 'Quizz rally 2024',
+  questions: [
+    {
+      label: 'Quelle est la couleur du chien ?',
+      answer: 'Bleu'
+    }
+  ]
+};
+
 const Quizz = () => {
-  const [quizz, setQuizz] = useState([]);
+  const [quizz, setQuizz] = useState(defaultQuizz);
 
   const fetchQuizz = async() => {
-    const response = await fetch(`http://localhost:4000/api/quizz`);
-    console.log(response);
-    const quizz = await response.json();
-    setQuizz(quizz);
+    try {
+      const response = await fetch(`http://localhost:4000/api/quizz`);
+      const quizz = await response.json();
+      if (quizz.name) {
+        setQuizz(quizz);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   fetchQuizz();
@@ -19,16 +34,13 @@ const Quizz = () => {
       {
         quizz.questions.map((item) => (
           <div key={item.label}>
-            <label>{ item.question }</label>
+            <label>{ item.label }</label>
             <input type="text" />
           </div>
         ))
       }
 
-      <div>
-        <label>Quelle est la couleur du chien</label>
-        <input type="text" />
-      </div>
+      <button type="button">Sauvegarder les réponses</button>
     </div>
   );
 }
