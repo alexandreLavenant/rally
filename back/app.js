@@ -1,6 +1,8 @@
 const express = require('express');
+const cors = require('cors');
 const http = require('http');
 const { Server } = require('socket.io');
+
 const PORT = 4000;
 
 const mongoose = require('mongoose');
@@ -26,6 +28,8 @@ const io = new Server(server, {
   }
 });
 
+app.use(cors());
+
 // Teams
 app.get('/api/teams', async(_req, res) => {
   const teams = await Team.find({});
@@ -43,11 +47,12 @@ app.get('/api/teams/:id', async(req, res) => {
 });
 
 // Quizz
-app.get('/api/quizz/:id', async(req, res) => {
-  const quizz = await Quizz.findOne({ _id: req.params.id });
-
+app.get('/api/quizz', async(_req, res) => {
+  const quizz = await Quizz.findOne({ name: process.env.QUIZZ_NAME });
+  
   if (!quizz) {
-    res.sendStatus(404);
+    res.status(404).json({ message: 'Not found' });
+    return;
   }
 
   res.json(quizz);
