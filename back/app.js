@@ -30,6 +30,12 @@ const io = new Server(server, {
 
 app.use(cors());
 
+// Login
+app.get('/api/login', async(_req, res) => {
+  const teams = await Team.find({});
+  res.json(teams);
+});
+
 // Teams
 app.get('/api/teams', async(_req, res) => {
   const teams = await Team.find({});
@@ -44,6 +50,16 @@ app.get('/api/teams/:id', async(req, res) => {
   }
 
   res.json(team);
+});
+
+app.put('/api/teams/:id', async(req, res) => {
+  try {
+    const team = req.body.team;
+    await Team.findOneAndUpdate({ _id: req.params._id }, team);
+    res.json({ message: 'team updated' });
+  } catch(error) {
+    res.status(404).json({ message: 'Not found' });
+  }
 });
 
 // Quizz
