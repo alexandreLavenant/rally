@@ -64,14 +64,17 @@ app.put('/api/teams/:id', async(req, res) => {
 
 // Quizz
 app.get('/api/quizz', async(_req, res) => {
-  const quizz = await Quizz.findOne({ name: process.env.QUIZZ_NAME });
+  try {
+    const quizz = await Quizz.findOne({ _id: process.env.QUIZZ_ID });
+    if (!quizz) {
+      res.status(404).json({ message: 'Not found' });
+      return;
+    }
   
-  if (!quizz) {
-    res.status(404).json({ message: 'Not found' });
-    return;
+    res.json(quizz);
+  } catch (error) {
+    res.status(500).json({ error });
   }
-
-  res.json(quizz);
 });
 
 io.on('connection', () => {
