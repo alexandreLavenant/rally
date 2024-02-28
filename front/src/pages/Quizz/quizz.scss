@@ -1,0 +1,12 @@
+.container {
+  background-color: var(--color-primary);
+  justify-content: center;
+  height: 100vh;
+}
+
+.quizz {
+  background-color: var(--color-invert);
+  padding: 24px;
+  border-radius: 8px;
+  min-width: 60vw;
+}
