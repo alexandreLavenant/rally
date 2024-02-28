@@ -7,6 +7,10 @@ const defaultQuizz = {
     {
       label: 'Quelle est la couleur du chien ?',
       answer: 'Bleu'
+    },
+    {
+      label: 'Quelle est la couleur du chat ?',
+      answer: 'rouge'
     }
   ]
 };
